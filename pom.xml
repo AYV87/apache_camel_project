@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>apache_camel_project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <url>https://github.com/AYV87/apache_camel_project</url>
+    <name>spring_camel_project-${project.artifactId}</name>
+
+    <properties>
+        <spring-boot-release>1.5.7.RELEASE</spring-boot-release>
+        <spring-jdbc-version>4.3.11.RELEASE</spring-jdbc-version>
+        <spring-jms-version>4.3.11.RELEASE</spring-jms-version>
+        <h2database-version>1.4.196</h2database-version>
+        <maven-compiler-version>3.5.1</maven-compiler-version>
+        <java-source-version>1.8</java-source-version>
+        <java-target-version>1.8</java-target-version>
+        <java.version>1.8</java.version>
+        <derby-version>10.14.2.0</derby-version>
+        <apache-camel-version>2.22.1</apache-camel-version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+    </parent>
+
+    <repositories>
+        <repository>
+            <id>mvnrepository</id>
+            <name>mvnrepository</name>
+            <url>http://www.mvnrepository.com</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- DataBase -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring-jdbc-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2database-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--JMS-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${spring-jms-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+           <!-- <version>${spring-boot-release}</version>-->
+        </dependency>
+
+        <!-- Apache Camel -->
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-core -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-stream</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring-javaconfig</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-jms -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-context -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-context</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-mail</artifactId>
+            <version>${apache-camel-version}</version>
+        </dependency>
+
+        <!-- Bitronix TM -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jta-bitronix</artifactId>
+            <version>${spring-boot-release}</version>
+        </dependency>
+   </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
